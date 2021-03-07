@@ -2,8 +2,12 @@ class Carousel {
 
     constructor(options) {
         this.options = options;
-        this.chunkSize = 5;
+        this.chunkSize = this.getCorrectChunkSize();
         this.initCarousel();
+    }
+
+    getCorrectChunkSize() {
+        return window.innerWidth <= 1210 ? 3 : 5;
     }
 
     /* Generate and display carousel header info and all cards inside this.options.container */
