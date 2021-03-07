@@ -1,9 +1,9 @@
 :root {
     --myCarousel-background-color: rgb(197, 197, 197);
     --myCarousel-title-color: rgb(27, 64, 107);
-    --myCarousel-subtitle-color: rgb(85, 84, 84);;
+    --myCarousel-subtitle-color: rgb(85, 84, 84);
     --myCarousel-card-image-background-color:grey;
-    --myCarousel-black-transparency: rgb(0,0,0,0.5);;
+    --myCarousel-black-transparency: rgb(0,0,0,0.5);
     --myCarousel-white: white;
 }
 
@@ -12,11 +12,14 @@
     background-color: var(--myCarousel-background-color);
     margin-bottom: 2%;
     padding: 1% 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .carouselHeader {
     display: flex;
     align-items: center;
+    height: 70px;
 }
 
 .carouselHeader h4 {
@@ -45,6 +48,7 @@
     margin: 1%;
     justify-content: space-between;
     position: relative;
+    flex: 1;
 }
 
 /* cards style */
@@ -52,14 +56,18 @@
     width: 18%;
     display: flex;
     flex-direction: column;
+    min-height: 40vh;
 }
 
 .cardImage {
     display: flex;
+    flex: 1;
     align-items: flex-end;
     justify-content: space-between;
-    height: 15vh;
     background-color: var(--myCarousel-card-image-background-color);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
 
 .cardImage span {
@@ -67,12 +75,12 @@
     font-weight: 800;
     font-size: 15px;
     color: var(--myCarousel-white);
-    padding: 1% 2%;
+    padding: 4px 8px;
     background-color: var(--myCarousel-black-transparency);
 }
 
 .cardTitle {
-    height: 25vh;
+    flex: 1;
     background-color: var(--myCarousel-white);
     border: 1px solid var(--myCarousel-card-image-background-color);
     border-top: 0;
@@ -81,7 +89,7 @@
 .cardTitle h5 {
     font-weight: 800;
     color: var(--myCarousel-title-color);
-    padding: 8%;
+    padding: 12px;
     font-size: 18px;
     margin: 0;
 }
@@ -96,6 +104,11 @@
 
 .collection2 {
     margin: 0 4px;
+}
+
+.fake-collection {
+    height: 6px;
+    background-color: transparent;
 }
 
 /* card mockup style */
@@ -156,9 +169,7 @@
 /* responsiveness*/
 @media only screen and (max-width: 1210px) {
     .cardContent {
-      width: 31%;
-      display: flex;
-      flex-direction: column;
-      height: 25vh;
+        width: 31%;
+        min-height: 25vh;
   }
 }
