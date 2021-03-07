@@ -7,6 +7,7 @@
         <link rel="stylesheet" type="text/css" href="css/carousel.css">
         <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
         <script type="text/javascript" src="js/carousel.js"></script>
+        <script type="text/javascript" src="js/utilities.js"></script>
     </head>
     <body>
         <h1>Carousel Demo Page</h1>
@@ -20,13 +21,19 @@
                 subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis condimentum nisl e tristique.',
                 fetchCards: function (chunksize) {
                     /* function that return "chunkSize" card object to be displayed in the carousel */
-                    return {
-                        image: 'https://...',
-                        type: 'video',
-                        duration: 3600,
-                        title: 'This is a title for card ' + titleIndex + ' suspendisse in libero porta, porta mauris ac, blandit tellus.',
-                        cardinality: 'single'
-                    } 
+                    let cards = [];
+                    for (i = 0; i < chunksize; i++) {
+                        let titleIndex = i + 1;
+                        let card = {
+                            image: 'https://picsum.photos/id/' + getRndInteger(1, 1000) + '/400/200',
+                            type: randType(),
+                            duration: randTime(),
+                            title: 'This is a title for card ' + titleIndex + ' suspendisse in libero porta, porta mauris ac, blandit tellus.',
+                            cardinality: randCardinality()
+                        }
+                        cards.push(card);
+                    }
+                    return cards;
                 }
             };
             const carousel1 = new Carousel(options1);
@@ -38,7 +45,20 @@
                 title: 'Another carousel instance title',
                 subtitle: 'Phasellus egestas at diam ut viverra. Curabitur sed turpis faucibus, tempus mauris at.',
                 fetchCards: function (chunksize) {
-                    // See myCarousel1
+                     /* function that return "chunkSize" card object to be displayed in the carousel */
+                     let cards = [];
+                    for (i = 0; i < chunksize; i++) {
+                        let titleIndex = i + 1;
+                        let card = {
+                            image: 'https://picsum.photos/id/' + getRndInteger(1, 1000) + '/400/200',
+                            type: randType(),
+                            duration: randTime(),
+                            title: 'This is a title for card ' + titleIndex + ' suspendisse in libero porta, porta mauris ac, blandit tellus.',
+                            cardinality: randCardinality()
+                        }
+                        cards.push(card);
+                    }
+                    return cards;
                 }
             };
             const carousel2 = new Carousel(options2);
