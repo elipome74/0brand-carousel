@@ -21,13 +21,7 @@ class Carousel {
         content += '</div>';
         
         document.getElementById(this.options.container).innerHTML = content;
-        // Add mocked card cards inside proper container
-        document.getElementById(this.options.container + '-carousel').innerHTML = this.showMockedCards();
-        // Wait a random time between 1000 and 3000 millisecond (to simulate remote call)
-        sleep(getRndInteger(1000,3000)).then(() => {
-            // Substitute mocked cards with generated cards
-            document.getElementById(this.options.container + '-carousel').innerHTML = this.getCardsContent();
-        });
+        this.loadNewCards();
     }
 
     /* Generate each card given by fetchCard function */
@@ -71,6 +65,23 @@ class Carousel {
             cardsContent += cardContent;
         }
         return cardsContent;
+    }
+
+    loadNewCards() {
+        const {container : carouselId} = this.options
+        let buttonLeft = '<div class="button button-left" id="' + carouselId + '-button-left"><span class="material-icons">keyboard_arrow_left</span></div>';
+        let buttonRight = '<div class="button button-right" id="' + carouselId + '-button-right"><span class="material-icons">keyboard_arrow_right</span></div>';
+        
+        // Add mocked card cards inside proper container
+        document.getElementById(carouselId + '-carousel').innerHTML = buttonLeft + buttonRight + this.showMockedCards();
+        // Wait a random time between 1000 and 3000 millisecond (to simulate remote call)
+        sleep(getRndInteger(1000,3000)).then(() => {
+            // Substitute mocked cards with generated cards
+            document.getElementById(carouselId + '-carousel').innerHTML = buttonLeft + buttonRight + this.getCardsContent();
+            // Add listener to prevoius / next buttons
+            document.getElementById(carouselId + '-button-left').addEventListener("click", () => { this.loadNewCards() });
+            document.getElementById(carouselId + '-button-right').addEventListener("click", () => { this.loadNewCards() });
+        });
     }
 
 }

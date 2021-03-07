@@ -7,6 +7,7 @@
     --myCarousel-white: white;
 }
 
+/* carousel style */
 .myCarousel {
     background-color: var(--myCarousel-background-color);
     margin-bottom: 2%;
@@ -46,6 +47,7 @@
     position: relative;
 }
 
+/* cards style */
 .cardContent {
     width: 18%;
     display: flex;
@@ -94,6 +96,7 @@
     margin: 0 4px;
 }
 
+/* card mockup style */
 .text-placeholder {
     height: 15px; 
     background-color:lightgrey; 
@@ -117,4 +120,43 @@
 	100% {
 		background-position: 0% 50%;
 	}
+}
+
+/* button style */
+.button {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: calc(50% - 25px);
+    background-color: rgb(0,0,0,0.5);
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.button-right{
+    right: -20px;
+}
+
+.button-left{
+    left: -20px;
+}
+
+.button-left .material-icons {
+    margin-top: 5px;
+    margin-left: 4px;
+}
+
+.button-right .material-icons {
+    margin-top: 5px;
+    margin-left: 6px;
+}
+
+/* responsiveness*/
+@media only screen and (max-width: 1210px) {
+    .cardContent {
+      width: 31%;
+      display: flex;
+      flex-direction: column;
+      height: 25vh;
+  }
 }
