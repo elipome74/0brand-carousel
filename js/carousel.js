@@ -47,6 +47,9 @@ class Carousel {
                 cardContent += '    </div>';
                 cardContent += '    <div class="collection2">';
                 cardContent += '    </div>';
+            } else {
+                cardContent += '    <div class="fake-collection">';
+                cardContent += '    </div>';
             }
             cardContent += '</div>';
             cardsContent += cardContent;
