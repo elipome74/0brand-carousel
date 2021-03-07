@@ -93,3 +93,28 @@
 .collection2 {
     margin: 0 4px;
 }
+
+.text-placeholder {
+    height: 15px; 
+    background-color:lightgrey; 
+    border-radius: 5px; 
+    margin: 20px;
+}
+
+.placeholder {
+	background: linear-gradient(-90deg, grey, lightgrey, grey, lightgrey);
+	background-size: 400% 400%;
+	animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}

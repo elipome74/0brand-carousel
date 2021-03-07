@@ -21,8 +21,13 @@ class Carousel {
         content += '</div>';
         
         document.getElementById(this.options.container).innerHTML = content;
-        //Add generated cards inside proper container
-        document.getElementById(this.options.container + '-carousel').innerHTML = this.getCardsContent();
+        // Add mocked card cards inside proper container
+        document.getElementById(this.options.container + '-carousel').innerHTML = this.showMockedCards();
+        // Wait a random time between 1000 and 3000 millisecond (to simulate remote call)
+        sleep(getRndInteger(1000,3000)).then(() => {
+            // Substitute mocked cards with generated cards
+            document.getElementById(this.options.container + '-carousel').innerHTML = this.getCardsContent();
+        });
     }
 
     /* Generate each card given by fetchCard function */
@@ -49,6 +54,22 @@ class Carousel {
             cardsContent += cardContent;
         }
 
+        return cardsContent;
+    }
+
+    showMockedCards() {
+        let i;
+        let cardsContent = '';
+        for (i = 0; i<this.chunkSize; i++) {
+            let cardContent = '<div class="cardContent" >'; 
+            cardContent += '    <div class="cardImage placeholder" > </div>';
+            cardContent += '    <div class="cardTitle">';
+            cardContent += '        <div class="text-placeholder placeholder" style="width: 80%;" > </div>';
+            cardContent += '        <div class="text-placeholder placeholder" style="width: 40%;" > </div>';
+            cardContent += '    </div>';
+            cardContent += '</div>';
+            cardsContent += cardContent;
+        }
         return cardsContent;
     }
 

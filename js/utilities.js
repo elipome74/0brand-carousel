@@ -28,3 +28,8 @@ function timeConvert(totalSeconds) {
     let seconds = totalSeconds % 60 === 0 ? '' : ' ' + totalSeconds % 60 + ' s';     
     return hours + minutes + seconds;   
 }
+
+/* Wait ms milliseconds */
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
