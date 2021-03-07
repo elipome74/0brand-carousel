@@ -63,9 +63,11 @@
 }
 
 .cardImage span {
+    white-space: nowrap;
     font-weight: 800;
+    font-size: 15px;
     color: var(--myCarousel-white);
-    padding: 2% 4%;
+    padding: 1% 2%;
     background-color: var(--myCarousel-black-transparency);
 }
 
