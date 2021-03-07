@@ -1,0 +1,95 @@
+:root {
+    --myCarousel-background-color: rgb(197, 197, 197);
+    --myCarousel-title-color: rgb(27, 64, 107);
+    --myCarousel-subtitle-color: rgb(85, 84, 84);;
+    --myCarousel-card-image-background-color:grey;
+    --myCarousel-black-transparency: rgb(0,0,0,0.5);;
+    --myCarousel-white: white;
+}
+
+.myCarousel {
+    background-color: var(--myCarousel-background-color);
+    margin-bottom: 2%;
+    padding: 1% 0;
+}
+
+.carouselHeader {
+    display: flex;
+    align-items: center;
+}
+
+.carouselHeader h4 {
+    color: var(--myCarousel-title-color);
+    margin: 1% 0;
+    font-size: 22px;
+}
+
+.carouselHeader span {
+    color:  var(--myCarousel-title-color);
+    margin: 0 1%;
+}
+
+.carouselHeader p {
+    color: var(--myCarousel-subtitle-color);
+    margin: 1% 0;
+}
+
+.material-icons {
+    font-size: 40px;
+}
+
+.carouselContainer {
+    display: flex;
+    align-items: flex-start;
+    margin: 1%;
+    justify-content: space-between;
+    position: relative;
+}
+
+.cardContent {
+    width: 18%;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardImage {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 15vh;
+    background-color: var(--myCarousel-card-image-background-color);
+}
+
+.cardImage span {
+    font-weight: 800;
+    color: var(--myCarousel-white);
+    padding: 2% 4%;
+    background-color: var(--myCarousel-black-transparency);
+}
+
+.cardTitle {
+    height: 25vh;
+    background-color: var(--myCarousel-white);
+    border: 1px solid var(--myCarousel-card-image-background-color);
+    border-top: 0;
+}
+
+.cardTitle h5 {
+    font-weight: 800;
+    color: var(--myCarousel-title-color);
+    padding: 8%;
+    font-size: 18px;
+    margin: 0;
+}
+
+.collection, .collection2 {
+    border: 1px solid var(--myCarousel-card-image-background-color);
+    border-top: 0;
+    background-color: var(--myCarousel-white);
+    height: 2px;
+    margin: 0 2px;
+}
+
+.collection2 {
+    margin: 0 4px;
+}
